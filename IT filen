@@ -1,0 +1,77 @@
+import math
+        
+def riktigInputInt_float_eller_int(type:str,InputTekst:str, FeilTekst:str,grense1=None, grense2=None, inniListe:list=[],):
+    inputVerdi = ''
+
+    if type == 'int':
+        while True:
+                try:
+                    inputVerdi = int(input(f'{InputTekst}: '))
+                    if inniListe != [] and grense1 != None and grense2 != None:
+                        if not(grense1<= inputVerdi and inputVerdi <=grense2) or inputVerdi in inniListe:
+                            raise ValueError
+                        
+                    if inniListe != [] and grense1 == None and grense2 != None:
+                        if not(inputVerdi <= grense2) or inputVerdi in inniListe:
+                            raise ValueError
+                        
+                    if inniListe != [] and grense1 != None and grense2 == None:
+                        if not(grense1<= inputVerdi) or inputVerdi in inniListe:
+                            raise ValueError
+                        
+                    if inniListe == [] and grense1 != None and grense2 != None:
+                        if not(grense1<= inputVerdi and inputVerdi <=grense2):
+                            raise ValueError    
+
+                    if inniListe == [] and grense1 == None and grense2 != None:
+                        if not(inputVerdi <= grense2):
+                            raise ValueError
+
+                    if inniListe == [] and grense1 != None and grense2 == None:
+                        if not(grense1 <= inputVerdi):
+                            raise ValueError
+                 
+                    if inniListe != [] and grense1 == None and grense2 == None:
+                        if not inputVerdi in inniListe:
+                            raise ValueError       
+                except:
+                    print(f'\t{FeilTekst}')
+                else:
+                    break
+    elif type == 'float':
+        while True:
+                try:
+                    inputVerdi = float(input(f'{InputTekst}: '))
+                    if inniListe != [] and grense1 != None and grense2 != None:
+                        if not(grense1<= inputVerdi and inputVerdi <=grense2) or inputVerdi in inniListe:
+                            raise ValueError
+                        
+                    if inniListe != [] and grense1 == None and grense2 != None:
+                        if not(inputVerdi <= grense2) or inputVerdi in inniListe:
+                            raise ValueError
+                        
+                        
+                    if inniListe != [] and grense1 != None and grense2 == None:
+                        if not(grense1<= inputVerdi) or inputVerdi in inniListe:
+                            raise ValueError
+                        
+                    if inniListe == [] and grense1 != None and grense2 != None:
+                        if not(grense1<= inputVerdi and inputVerdi <=grense2):
+                            raise ValueError    
+
+                    if inniListe == [] and grense1 == None and grense2 != None:
+                        if not(inputVerdi <= grense2):
+                            raise ValueError
+
+                    if inniListe == [] and grense1 != None and grense2 == None:
+                        if not(grense1 <= inputVerdi):
+                            raise ValueError
+                 
+                    if inniListe != [] and grense1 == None and grense2 == None:
+                        if not inputVerdi in inniListe:
+                            raise ValueError        
+                except:
+                    print(f'\t{FeilTekst}')
+                else:
+                    break
+    return inputVerdi
