@@ -3,7 +3,7 @@ import math
 def riktigInputInt_float_eller_int(type:str,InputTekst:str, FeilTekst:str,grense1=None, grense2=None, inniListe:list=[],):
     inputVerdi = ''
 
-    if type == 'int':
+    if type == 'int': 
         while True:
                 try:
                     inputVerdi = int(input(f'{InputTekst}: '))
